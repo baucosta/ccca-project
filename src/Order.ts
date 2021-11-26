@@ -24,7 +24,6 @@ export class Order {
         const totalSum = this.items.reduce((acumulador, currentValue) => {
             return acumulador + (currentValue.getQuantity() * currentValue.getPrice());
         }, 0);
-
         if (coupon.getPercent() > 0) return totalSum - (totalSum * coupon.getPercent()) / 100;
 
         return totalSum;
